@@ -33,8 +33,8 @@ def trade_order(self,
         "stopPrice":    stopPrice,
         "recvWindow":   recvWindow,
 
-        "takeProfit":  "{\"type\": \"TAKE_PROFIT_MARKET\", \"stopPrice\": %TAKE_PROFIT%,\"price\": %TAKE_PROFIT%,\"workingType\":\"MARK_PRICE\"}".replace("%TAKE_PROFIT%", str(takeProfit)) if takeProfit else None,
-        "stopLoss":    "{\"type\": \"STOP_MARKET\", \"stopPrice\": %STOP_LOSS%,\"price\": %STOP_LOSS%,\"workingType\":\"MARK_PRICE\"}".replace("%STOP_LOSS%", str(stopLoss)) if stopLoss else None,
+        "takeProfit":  "{\"type\": \"TAKE_PROFIT_MARKET\", \"stopPrice\": %TAKE_PROFIT%,\"price\": %TAKE_PROFIT%,\"workingType\":\"MARK_PRICE\", \"stopGuaranteed\": \"true\"}".replace("%TAKE_PROFIT%", str(takeProfit)) if takeProfit else None,
+        "stopLoss":    "{\"type\": \"STOP_MARKET\", \"stopPrice\": %STOP_LOSS%,\"price\": %STOP_LOSS%,\"workingType\":\"MARK_PRICE\", \"stopGuaranteed\": \"true\"}".replace("%STOP_LOSS%", str(stopLoss)) if stopLoss else None,
     })
 
     if 'code' in res and res['code']:

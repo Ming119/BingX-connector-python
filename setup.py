@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 NAME = "bingX-connector2"
-VERSION = "0.0.5"
+VERSION = "0.0.8"
 AUTHOR = "Ming119"
 URL = "https://github.com/demonarch/bingX-connector-python"
 
