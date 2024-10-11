@@ -6,16 +6,18 @@ from typing import List
 from bingX import ClientError
 
 def trade_order(self,
-    symbol:       str,
-    type:         str,
-    side:         str,
-    positionSide: str   = None,
-    price:        float = None,
-    quantity:     float = None,
-    stopPrice:    float = None,
-    recvWindow:   int   = None,
-    reduceOnly:   bool = None,
-) -> dict:
+                symbol:       str,
+                type:         str,
+                side:         str,
+                positionSide: str   = None,
+                price:        float = None,
+                quantity:     float = None,
+                takeProfit:    dict = None,
+                stopLoss:    dict = None,
+                stopGuaranteed:    dict = None,
+                stopPrice:    float = None,
+                recvWindow:   int   = None,
+                ) -> dict:
     ''' Place a New Order
     POST /openApi/swap/v2/trade/order
 
@@ -28,9 +30,11 @@ def trade_order(self,
         "positionSide": positionSide,
         "price":        price,
         "quantity":     quantity,
+        "takeProfit":     takeProfit,
+        "stopLoss":     stopLoss,
+        "stopGuaranteed":     stopGuaranteed,
         "stopPrice":    stopPrice,
         "recvWindow":   recvWindow,
-        "reduceOnly":   reduceOnly
     })
 
     if 'code' in res and res['code']:
@@ -44,6 +48,9 @@ def trade_order_test(self,
     positionSide: str   = None,
     price:        float = None,
     quantity:     float = None,
+    takeProfit:    dict = None,
+    stopLoss:    dict = None,
+    stopGuaranteed:    dict = None,
     stopPrice:    float = None,
     recvWindow:   int   = None,
     reduceOnly:   bool = None,
@@ -60,9 +67,11 @@ def trade_order_test(self,
         "positionSide": positionSide,
         "price":        price,
         "quantity":     quantity,
+        "takeProfit":     takeProfit,
+        "stopLoss":     stopLoss,
+        "stopGuaranteed":     stopGuaranteed,
         "stopPrice":    stopPrice,
         "recvWindow":   recvWindow,
-        "reduceOnly":   reduceOnly
     })
 
     if 'code' in res and res['code']:
