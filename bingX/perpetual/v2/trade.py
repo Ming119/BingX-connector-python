@@ -17,6 +17,7 @@ def trade_order(self,
     stopGuaranteed:    dict = None,
     stopPrice:    float = None,
     recvWindow:   int   = None,
+    reduceOnly: bool = None,
 ) -> dict:
     ''' Place a New Order
     POST /openApi/swap/v2/trade/order
@@ -35,6 +36,7 @@ def trade_order(self,
         "stopGuaranteed":     stopGuaranteed,
         "stopPrice":    stopPrice,
         "recvWindow":   recvWindow,
+        "reduceOnly":   reduceOnly
     })
 
     if 'code' in res and res['code']:
