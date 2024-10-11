@@ -72,7 +72,7 @@ def trade_order_test(self,
         "stopGuaranteed":     stopGuaranteed,
         "stopPrice":    stopPrice,
         "recvWindow":   recvWindow,
-        "reduceOnly": reduceOnly
+        "reduceOnly":   reduceOnly
     })
 
     if 'code' in res and res['code']:
