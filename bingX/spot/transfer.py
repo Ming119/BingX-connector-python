@@ -15,11 +15,11 @@ def transfer(self,
 
     https://bingx-api.github.io/docs/spot/user-interface.html#user-universal-transfer
     '''
-    res = self.post('/openApi/api/v3/asset/transfer', params={
+    res = self.post('/openApi/api/v3/post/asset/transfer', params={
         'type':       type,
         'asset':      asset,
         'amount':     amount,
-        'recvWindow': recvWindow,
+        'recvWindow': recvWindow
     })
 
     if 'code' in res and res['code']:
